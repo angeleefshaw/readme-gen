@@ -1,8 +1,10 @@
 const inquirer = require('inquirer');
-const {writeFile} = require('fs')
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const fs = require('fs')
+const util = require('util');
+const {generateMarkdown} = require('./utils/generateMarkdown');
+//const { error } = require('console');
 
-//const writeFileAsync = util.promisify(fs.writeFile)
+const writeFileAsync = util.promisify(fs.writeFile)
 
 // array of questions for user
 const promptUser = () => {
@@ -28,8 +30,8 @@ const promptUser = () => {
             
         },{
             type:"input",
+            name: "Usage",
             message: "How to use this applicaiton?",
-            name: "Usage"
         },{
             type:"list",
             message: "What is the license for this project?",
@@ -42,30 +44,38 @@ const promptUser = () => {
                 "None"]
         },{
             type:"input",
+            name: "Contributing",
             message: "How can users contribute to this project?",
-            name: "Contributing"
         },{
             type:"input",
+            name: "Tests",
             message: "What command is needed to run tests?",
-            name: "Tests"
         },{
             type:"input",
-            message: "What is your github username?",
-            name: "Questions"
+            name: "GitHub",
+            message: "Enter your github username.",
         },
-    ])
+        {
+            type: 'input',
+            name: 'LinkedIn',
+            message: 'Enter your LinkedIn URL.',
+        },
+        {
+            type: 'input',
+            name: 'Email',
+            message: 'Enter your Email address',
+        }
+    ]).then(answers => {
+        writeToFile(answers)
+    }).catch((err) => console.error(err));
 
 };
 
-    
-promptUser().then((answers) => {
-    writeFile('README.txt', generateMarkdown(answers));
-    console.log('Successfully wrote to README')
-})
-.catch((err) => console.error(err));
+const writeToFile = answers => {
+    writeFileAsync('README.md', generateMarkdown(answers))
+}
 
-
-
+promptUser();
 
 
 
