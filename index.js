@@ -20,11 +20,6 @@ const promptUser = () => {
             
         },{
             type:"input",
-            name: "Table of Contents",
-            message: "Provide a table of contents",
-            
-        },{
-            type:"input",
             name: "Installation",
             message: "What instructions should users follow to install your application?",
             
@@ -49,10 +44,10 @@ const promptUser = () => {
         },{
             type:"input",
             name: "Tests",
-            message: "What command is needed to run tests?",
+            message: "Give test instructions",
         },{
             type:"input",
-            name: "GitHub",
+            name: "Questions",
             message: "Enter your github username.",
         },
         {
@@ -67,6 +62,7 @@ const promptUser = () => {
         }
     ]).then(answers => {
         writeToFile(answers)
+        console.log('Successfully wrote to README.md!')
     }).catch((err) => console.error(err));
 
 };
