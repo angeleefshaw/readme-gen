@@ -30,6 +30,10 @@ A command-line application that generates README's based on user input.
   Watch the demo video
   
   [README GENERATOR](https://youtu.be/xlB12EdwFpU "README GENERATOR")
+
+  ![redme-gen](thumbnail-readme-gen.jpg)
+
+
   
   
   ## License
