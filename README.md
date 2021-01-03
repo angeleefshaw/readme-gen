@@ -3,7 +3,7 @@ A command-line application that generates README's based on user input.
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
-  ## Table of Conntents
+  ## Table of Contents
   1. [Installation](#Installation)
   2. [Usage](#Usage)
   3. [License](#License)
