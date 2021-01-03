@@ -6,7 +6,7 @@ function generateMarkdown(answers) {
   ## Description 
   ${answers.Description}
   
-  ## Table of Conntents
+  ## Table of Contents
   1. [Installation](#Installation)
   2. [Usage](#Usage)
   3. [License](#License)
