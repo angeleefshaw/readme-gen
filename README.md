@@ -15,6 +15,12 @@ A command-line application that generates README's based on user input.
   ## Installation 
   Clone this repository by clicking on the green button that says 'Code'
   
+  Remeber to run the command 
+  > npm i
+  Or
+  >npm install
+  to install dependencies before running the application your command line.
+  
   ## Usage
   Invoke the applicaton with the command 
   
